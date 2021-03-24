@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Movie List";
+}
+
+@model IEnumerable<MovieStorageAveryDustin.Models.MovieResponse>
+<div>
+    <h1>Congrats! Your movie was submitted successfully!</h1>
+    <h2>Here are the submitted Movies:</h2>
+
+    <!--Table that dynamically displays info from the model-->
+    <table>
+        <thead>
+            <tr>
+                <th style="padding:20px">Category</th>
+                <th style="padding:20px">Title</th>
+                <th style="padding:20px">Start Year</th>
+                <th style="padding:20px">DirectorName</th>
+                <th style="padding:20px">Rating</th>
+                <th style="padding:20px">Edited?</th>
+                <th style="padding:20px">Lent To</th>
+                <th style="padding:20px">Notes</th>
+                <th style="padding:20px">Edit</th>
+                <th style="padding:20px">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--iterates through the model and displays data for each class-->
+            @foreach(MovieStorageAveryDustin.Models.MovieResponse x in Model)
+            {
+            <tr>
+                <td style="padding:20px">@x.Category</td>
+                <td style="padding:20px">@x.Title</td>
+                <td style="padding:20px">@x.StartYear</td>
+                <td style="padding:20px">@x.DirectorName</td>
+                <td style="padding:20px">@x.Rating</td>
+                <td style="padding:20px">@x.Edit</td>
+                <td style="padding:20px">@x.LentTo</td>
+                <td style="padding:20px">@x.Notes</td>
+                <td style="padding:20px"><a>Edit</a></td>
+                <td style="padding:20px"><a>Delete</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

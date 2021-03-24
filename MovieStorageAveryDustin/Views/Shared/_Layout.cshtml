@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Collection</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black border-bottom box-shadow mb-3">
+            <div class="container">
+                @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Layton Utah Temple Tour </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>*@
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Podcasts">My Podcasts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Create">Submit Movie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="">Saved Movies</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <!--Shared Navbar Below-->
+        @*<a asp-controller="Home" asp-action="Index" style="padding:15px;font-size:large">Home</a>
+        <a asp-controller="Home" asp-action="Podcasts" style="padding:15px;font-size:large">My Podcasts</a>
+        <a asp-controller="Movies" asp-action="Create" style="padding:15px;font-size:large">Submit Movie</a>
+        <a asp-controller="Movies" asp-action="" style="padding:15px;font-size:large">Saved Movies</a>*@
+
+        <!--Displays dynamic Header-->
+        <h1>@ViewBag.Head</h1>
+
+        <!--Renders contents of each view-->
+        <div class="container">
+            <div class="col-md">
+                @RenderBody()
+                </div>
+</div>
+            </div>
+</body>
+
+</html>
